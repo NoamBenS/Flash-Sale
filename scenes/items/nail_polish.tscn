@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2h2dc24ercqt"]
+[gd_scene load_steps=7 format=3 uid="uid://b2h2dc24ercqt"]
 
 [ext_resource type="Script" path="res://scripts/items/nail_polish.gd" id="1_kb0xv"]
 [ext_resource type="Texture2D" uid="uid://dke4rqdqd5l30" path="res://assets/item_assets/item_set.png" id="2_tjsjt"]
+[ext_resource type="Texture2D" uid="uid://cuxj4yq4o16ir" path="res://assets/player_assets/light_circle.png" id="3_l1483"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jfmp3"]
 radius = 5.5
@@ -30,5 +31,11 @@ shape = SubResource("CircleShape2D_jfmp3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_psj0t")
+
+[node name="ItemLight" type="PointLight2D" parent="."]
+scale = Vector2(0.15, 0.15)
+energy = 2.0
+blend_mode = 2
+texture = ExtResource("3_l1483")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
