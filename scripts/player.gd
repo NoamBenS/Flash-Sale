@@ -4,7 +4,7 @@ const speed = 100
 
 @onready var anim := $"Walk Animations"
 @onready var timer := $Timer
-@onready var oil := $Oil
+@onready var oil := $CanvasLayer/Oil
 @onready var light := $PlayerLight
 
 var facing := Vector2.DOWN
