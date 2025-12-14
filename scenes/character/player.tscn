@@ -208,7 +208,7 @@ zoom = Vector2(2, 2)
 [node name="PlayerLight" type="PointLight2D" parent="."]
 position = Vector2(30.5, -25)
 scale = Vector2(0.660156, 0.585938)
-energy = 1.5
+energy = 2.0
 blend_mode = 2
 texture = ExtResource("3_7303i")
 

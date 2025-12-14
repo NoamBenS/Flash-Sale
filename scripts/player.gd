@@ -65,4 +65,4 @@ func _on_timer_timeout():
 		timer.stop()
 		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
 	oil.value = current_time
-	light.energy = float(current_time) / max_time
+	light.energy = (float(current_time) / max_time) * 2
