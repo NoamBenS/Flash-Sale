@@ -34,6 +34,7 @@ sprite_frames = SubResource("SpriteFrames_myx6h")
 
 [node name="ItemLight" type="PointLight2D" parent="."]
 scale = Vector2(0.15, 0.15)
+color = Color(0.909804, 0.815686, 0.152941, 1)
 energy = 2.0
 blend_mode = 2
 texture = ExtResource("3_bx2ma")
