@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://bvcvtkdmnmnx5"]
+[gd_scene load_steps=7 format=4 uid="uid://bvcvtkdmnmnx5"]
 
 [ext_resource type="PackedScene" uid="uid://ermrypl24ne5" path="res://scenes/character/player.tscn" id="1_ogqc2"]
 [ext_resource type="PackedScene" uid="uid://cj0qb6l1mhekv" path="res://scenes/items/oil.tscn" id="1_spbaf"]
 [ext_resource type="Texture2D" uid="uid://dmn3epmldl303" path="res://assets/Solaria Demo Tiles.png" id="3_ddkhc"]
+[ext_resource type="PackedScene" uid="uid://ciifvjyy3nb62" path="res://scenes/background.tscn" id="4_5i3p7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s662r"]
 texture = ExtResource("3_ddkhc")
@@ -403,3 +404,6 @@ tile_map_data = PackedByteArray("AAD9//7/AAALAAEAAAD+//7/AAALAAEAAAD///7/AAALAAE
 tile_set = SubResource("TileSet_67mhx")
 rendering_quadrant_size = 64
 collision_visibility_mode = 1
+
+[node name="Background" parent="." instance=ExtResource("4_5i3p7")]
+position = Vector2(-272, -170)

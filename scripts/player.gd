@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 100
+const speed = 150
 
 @onready var anim := $"Walk Animations"
 @onready var timer := $Timer
