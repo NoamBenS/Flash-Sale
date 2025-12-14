@@ -171,14 +171,14 @@ bg_color = Color(0.815686, 0.780392, 0.764706, 0.611765)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bow7q"]
 bg_color = Color(0.651204, 0.602751, 0.387928, 1)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_yga4i")
 
 [node name="Walk Animations" type="AnimatedSprite2D" parent="."]
 position = Vector2(20, -28)
 sprite_frames = SubResource("SpriteFrames_80tnd")
-animation = &"walk_left"
+animation = &"idle_down"
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(33, -18.5)

@@ -1,3 +1,10 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Godot generated files
+.import/
+*.import
+
+# Godot caches
+.export/

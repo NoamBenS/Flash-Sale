@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj0qb6l1mhekv"]
+
+[ext_resource type="Script" path="res://scripts/oil.gd" id="1_1d7pn"]
+[ext_resource type="Texture2D" uid="uid://c2vds01cyg4af" path="res://Assets/item_assets/oil.png" id="1_whvgt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m4u2g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_myx6h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_whvgt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Oil" type="Area2D"]
+script = ExtResource("1_1d7pn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_m4u2g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.04, 0.04)
+sprite_frames = SubResource("SpriteFrames_myx6h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

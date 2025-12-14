@@ -9,7 +9,7 @@ const speed = 100
 
 var facing := Vector2.DOWN
 
-@export var max_time := 100  # seconds
+@export var max_time := 100  # 100%
 var current_time := max_time
 
 func _ready():
@@ -59,7 +59,7 @@ func update_animation():
 	
 
 func _on_timer_timeout():
-	current_time -= 5 # decrease by 2/sec
+	current_time -= 5 # decrease by 2%/sec
 	if current_time <= 0:
 		current_time = 0
 		timer.stop()
