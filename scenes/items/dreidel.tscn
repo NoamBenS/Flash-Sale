@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5rf8e1gpi8yl"]
+
+[ext_resource type="Script" path="res://scripts/items/dreidel.gd" id="1_mtv3c"]
+[ext_resource type="Texture2D" uid="uid://dke4rqdqd5l30" path="res://assets/item_assets/item_set.png" id="1_xe7ho"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k0kch"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xjlr"]
+atlas = ExtResource("1_xe7ho")
+region = Rect2(162, 6, 20, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvr1b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xjlr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Dreidel" type="Area2D"]
+script = ExtResource("1_mtv3c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_k0kch")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gvr1b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
