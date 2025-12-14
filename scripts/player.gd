@@ -6,7 +6,7 @@ const speed = 100
 
 var facing := Vector2.DOWN
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	var direction := Vector2.ZERO
 
