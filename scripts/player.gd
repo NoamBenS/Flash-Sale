@@ -10,7 +10,7 @@ const speed = 100
 var facing := Vector2.DOWN
 
 @export var max_time := 100  # 100%
-var current_time := max_time
+@export var current_time := max_time
 
 func _ready():
 	oil.value = max_time
