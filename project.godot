@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Flash Sale"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://Scenes/startButton.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://Flash Sale/icon.svg"
+<<<<<<<HEADrun/main_scene="uid://dvgbbfjuio5m"
 
 [display]
 
