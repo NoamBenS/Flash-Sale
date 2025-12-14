@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2lnw8iv3osjc"]
+
+[sub_resource type="Environment" id="Environment_w4deq"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_fsf3j"]
+
+[node name="Main" type="Node2D"]
+position = Vector2(8, -8)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w4deq")
+camera_attributes = SubResource("CameraAttributesPractical_fsf3j")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 328)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1146.0
+offset_bottom = 455.0
