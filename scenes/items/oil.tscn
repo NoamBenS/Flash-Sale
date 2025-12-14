@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cj0qb6l1mhekv"]
 
 [ext_resource type="Script" path="res://scripts/oil.gd" id="1_1d7pn"]
-[ext_resource type="Texture2D" uid="uid://c2vds01cyg4af" path="res://Assets/item_assets/oil.png" id="1_whvgt"]
+[ext_resource type="Texture2D" uid="uid://cm518slw332as" path="res://assets/item_assets/oil.png" id="1_whvgt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m4u2g"]
 
