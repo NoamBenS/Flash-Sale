@@ -3,10 +3,21 @@ extends CharacterBody2D
 const speed = 100
 
 @onready var anim := $"Walk Animations"
+@onready var timer := $Timer
+@onready var oil := $Oil
+@onready var light := $PlayerLight
 
 var facing := Vector2.DOWN
 
-func _physics_process(delta):
+@export var max_time := 100  # 100%
+var current_time := max_time
+
+func _ready():
+	oil.value = max_time
+	current_time = max_time
+	timer.start()
+
+func _physics_process(_delta):
 	
 	var direction := Vector2.ZERO
 
@@ -45,3 +56,13 @@ func update_animation():
 		else:
 			anim.play("walk_up")
 	return
+	
+
+func _on_timer_timeout():
+	current_time -= 5 # decrease by 2%/sec
+	if current_time <= 0:
+		current_time = 0
+		timer.stop()
+		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
+	oil.value = current_time
+	light.energy = float(current_time) / max_time
