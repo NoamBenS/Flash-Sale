@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvcvtkdmnmnx5"]
 
-[ext_resource type="PackedScene" uid="uid://ermrypl24ne5" path="res://Scenes/character/player.tscn" id="1_knhin"]
+[ext_resource type="PackedScene" uid="uid://ermrypl24ne5" path="res://scenes/character/player.tscn" id="1_ogqc2"]
 
 [node name="Level1" type="Node2D"]
 
-[node name="Character" parent="." instance=ExtResource("1_knhin")]
+[node name="Character" parent="." instance=ExtResource("1_ogqc2")]
 position = Vector2(39, 104)
 
 [node name="Camera2D" type="Camera2D" parent="."]
