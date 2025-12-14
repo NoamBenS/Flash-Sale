@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://ermrypl24ne5" path="res://scenes/character/player.tscn" id="1_ogqc2"]
 
 [node name="Level1" type="Node2D"]
+position = Vector2(153, 108)
 
 [node name="Character" parent="." instance=ExtResource("1_ogqc2")]
 position = Vector2(39, 104)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-zoom = Vector2(2, 2)
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
