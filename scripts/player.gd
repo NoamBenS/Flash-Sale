@@ -4,13 +4,15 @@ const speed = 100
 
 @onready var anim := $"Walk Animations"
 @onready var timer := $Timer
-@onready var oil := $Oil
+@onready var oil := $CanvasLayer/Oil
 @onready var light := $PlayerLight
 
 var facing := Vector2.DOWN
 
 @export var max_time := 100  # 100%
 var current_time := max_time
+
+var items := 0 # starting # of items
 
 func _ready():
 	oil.value = max_time
