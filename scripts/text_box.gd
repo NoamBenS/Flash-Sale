@@ -26,7 +26,8 @@ func display_text(text_to_display: String):
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD
 		await resized #wait for x resize
 		await resized #wait for y resized
-		custom_minimum_size.y = size.y
+		custom_minimum_size.y = min(size.y, 100)  # 100 = max height you want
+
 	
 	global_position.x -= size.x / 2
 	global_position.y -= size.y + 24

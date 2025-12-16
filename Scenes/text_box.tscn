@@ -1,26 +1,27 @@
 [gd_scene load_steps=6 format=3 uid="uid://eh3cttq1f81f"]
 
 [ext_resource type="Script" uid="uid://qo5i4ptl4vfg" path="res://scripts/text_box.gd" id="1_35wg4"]
-[ext_resource type="Texture2D" uid="uid://dxbjpgtsfjlsx" path="res://assets/player_assets/text-box-png-27.png" id="2_8smho"]
+[ext_resource type="Texture2D" uid="uid://gjwe2n3h1u76" path="res://assets/player_assets/text_box.png" id="2_8gqem"]
 [ext_resource type="FontFile" uid="uid://c1yjllkegadr7" path="res://assets/GrapeSoda.ttf" id="3_i5cf7"]
 [ext_resource type="Script" uid="uid://d3l1lo8sf0wk8" path="res://singletons/DialogManager.gd" id="4_8gqem"]
 [ext_resource type="PackedScene" uid="uid://ermrypl24ne5" path="res://Scenes/character/player.tscn" id="5_1q4u4"]
 
 [node name="TextBox" type="MarginContainer"]
 anchors_preset = -1
-anchor_left = 0.057000004
-anchor_top = -0.96300006
-anchor_right = 1.4860001
-offset_left = -58.368004
-offset_top = 524.689
-offset_right = -1094.6641
-offset_bottom = 334.0
+anchor_left = 0.051757813
+anchor_top = 0.094527364
+anchor_right = 0.4342891
+anchor_bottom = 0.17600001
+offset_top = 100.0
+offset_right = 0.28796387
+offset_bottom = 122.871994
 script = ExtResource("1_35wg4")
+metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-texture = ExtResource("2_8smho")
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("2_8gqem")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -30,18 +31,18 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
 [node name="Label" type="Label" parent="MarginContainer"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_i5cf7")
-theme_override_font_sizes/font_size = 104
+theme_override_font_sizes/font_size = 10
 text = "
 
 "
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_trim_flags = 0
 
 [node name="LetterDisplayTimer" type="Timer" parent="."]
 one_shot = true
@@ -51,6 +52,6 @@ position = Vector2(6, 89)
 script = ExtResource("4_8gqem")
 
 [node name="Player" parent="." instance=ExtResource("5_1q4u4")]
-position = Vector2(-35, 426)
+position = Vector2(138, 0)
 
 [connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
