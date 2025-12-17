@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=4 uid="uid://bvcvtkdmnmnx5"]
 
-[ext_resource type="PackedScene" uid="uid://ermrypl24ne5" path="res://scenes/character/player.tscn" id="1_ogqc2"]
-[ext_resource type="PackedScene" uid="uid://cj0qb6l1mhekv" path="res://scenes/items/oil.tscn" id="1_spbaf"]
-[ext_resource type="Texture2D" uid="uid://c60vj1yestgs6" path="res://assets/background/maze_tiles.png" id="3_swfv8"]
-[ext_resource type="PackedScene" uid="uid://r0ctjoxg2oa4" path="res://scenes/background.tscn" id="4_5i3p7"]
+[ext_resource type="PackedScene" uid="uid://cj0qb6l1mhekv" path="res://scenes/items/oil.tscn" id="1_0h4qk"]
+[ext_resource type="PackedScene" uid="uid://ermrypl24ne5" path="res://scenes/character/player.tscn" id="2_jdg4k"]
+[ext_resource type="Texture2D" uid="uid://c60vj1yestgs6" path="res://assets/background/maze_tiles.png" id="3_pmbem"]
+[ext_resource type="PackedScene" uid="uid://r0ctjoxg2oa4" path="res://scenes/background.tscn" id="4_g2ebt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s662r"]
 resource_name = "MazeTiles"
-texture = ExtResource("3_swfv8")
+texture = ExtResource("3_pmbem")
 separation = Vector2i(10, 10)
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
@@ -29,10 +29,10 @@ sources/0 = SubResource("TileSetAtlasSource_s662r")
 [node name="Level1" type="Node2D"]
 position = Vector2(153, 108)
 
-[node name="Oil" parent="." instance=ExtResource("1_spbaf")]
+[node name="Oil" parent="." instance=ExtResource("1_0h4qk")]
 position = Vector2(480, 475)
 
-[node name="Character" parent="." instance=ExtResource("1_ogqc2")]
+[node name="Character" parent="." instance=ExtResource("2_jdg4k")]
 position = Vector2(-115, 207)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -50,7 +50,7 @@ scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAD9//7/AAAAAAEAAAD+//7/AAAAAAEAAAD///7/AAAAAAEAAAAAAP7/AAAAAAEAAAABAP7/AAAAAAEAAAACAP7/AAAAAAEAAAADAP7/AAAAAAEAAAAEAP7/AAAAAAEAAAAFAP7/AAAAAAEAAAAGAP7/AAAAAAEAAAAHAP7/AAAAAAEAAAAIAP7/AAAAAAEAAAAIAP//AAAAAAEAAAAIAAAAAAAAAAEAAAAIAAEAAAAAAAEAAAAIAAIAAAAAAAEAAAAIAAMAAAAAAAAAAAD9/wgAAAAAAAEAAAD9/wcAAAAAAAEAAAD9/wUAAAAAAAEAAAD9/wYAAAAAAAEAAAD9/wQAAAAAAAEAAAD9/wMAAAAAAAEAAAD9/wIAAAAAAAEAAAD9/wEAAAAAAAEAAAD9////AAAAAAEAAAD9/wAAAAAAAAEAAAD/////AAAAAAEAAAD//wAAAAAAAAEAAAAAAAAAAAAAAAEAAAACAP//AAAAAAEAAAACAAAAAAAAAAEAAAAEAAAAAAAAAAEAAAAGAP//AAAAAAEAAAAFAAEAAAAAAAEAAAAGAAEAAAAAAAEAAAAGAAIAAAAAAAEAAAAGAAMAAAAAAAEAAAAHAAMAAAAAAAAAAAACAAcAAAAAAAEAAAD//wYAAAAAAAEAAAACAAQAAAAAAAEAAAAHAAkAAAAAAAEAAAAGAAkAAAAAAAEAAAAFAAkAAAAAAAEAAAAEAAkAAAAAAAEAAAADAAkAAAAAAAEAAAACAAkAAAAAAAEAAAABAAkAAAAAAAEAAAAAAAkAAAAAAAEAAAD//wkAAAAAAAEAAAD+/wkAAAAAAAEAAAD9/wkAAAAAAAEAAAACAAgAAAAAAAEAAAABAAcAAAAAAAEAAAAAAAcAAAAAAAEAAAD//wcAAAAAAAEAAAACAAUAAAAAAAEAAAABAAMAAAAAAAEAAAABAAIAAAAAAAEAAAAEAAgAAAAAAAEAAAAGAAcAAAAAAAEAAAAGAAYAAAAAAAEAAAAHAAYAAAAAAAEAAAAFAAYAAAAAAAEAAAAEAAYAAAAAAAEAAAAEAAUAAAAAAAEAAAAEAAQAAAAAAAEAAAAEAAMAAAAAAAEAAAADAAIAAAAAAAEAAAAIAAYAAAAAAAAAAAAIAAcAAAAAAAEAAAAIAAgAAAAAAAEAAAAIAAkAAAAAAAEAAAAJAAMAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAMAAAAAAAAAAAD//wEAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_67mhx")
 
-[node name="Background" parent="." instance=ExtResource("4_5i3p7")]
+[node name="Background" parent="." instance=ExtResource("4_g2ebt")]
 z_index = -15
 position = Vector2(-305, -82)
 scale = Vector2(2, 2)
