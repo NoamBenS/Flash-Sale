@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwrydy2wqa2ho"]
+
+[ext_resource type="Texture2D" uid="uid://dke4rqdqd5l30" path="res://assets/item_assets/item_set.png" id="1_o78p8"]
+[ext_resource type="Script" path="res://scripts/items/hat.gd" id="1_q3b4s"]
+[ext_resource type="Texture2D" uid="uid://cuxj4yq4o16ir" path="res://assets/player_assets/light_circle.png" id="3_hu2u0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_py1i1"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kulhw"]
+atlas = ExtResource("1_o78p8")
+region = Rect2(28, 12, 30, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t1c5x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kulhw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Hat" type="Area2D"]
+script = ExtResource("1_q3b4s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_py1i1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t1c5x")
+
+[node name="ItemLight" type="PointLight2D" parent="."]
+scale = Vector2(0.15, 0.15)
+energy = 2.0
+blend_mode = 2
+texture = ExtResource("3_hu2u0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
