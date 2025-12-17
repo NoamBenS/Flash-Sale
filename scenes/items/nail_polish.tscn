@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2h2dc24ercqt"]
+[gd_scene load_steps=7 format=3 uid="uid://cq2vakfg4oqo3"]
 
 [ext_resource type="Script" path="res://scripts/items/nail_polish.gd" id="1_kb0xv"]
 [ext_resource type="Texture2D" uid="uid://dke4rqdqd5l30" path="res://assets/item_assets/item_set.png" id="2_tjsjt"]

@@ -14,6 +14,8 @@ func _process(_delta):
 func _on_body_entered(body):
 	if body.is_in_group("Player"):  # make sure the colliding body is the player
 		body.current_time = 105  # increase oil by 1/3
+	else:
+		return
 	if body.current_time > body.max_time:
 		body.current_time = body.max_time
 	queue_free()

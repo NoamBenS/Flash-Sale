@@ -10,7 +10,7 @@ const speed = 150
 var facing := Vector2.DOWN
 
 @export var max_time := 100  # 100%
-var current_time := max_time
+@export var current_time := max_time
 
 var items := 0 # starting # of items
 

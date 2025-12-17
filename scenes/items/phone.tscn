@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6h3omkv81ajr"]
+[gd_scene load_steps=7 format=3 uid="uid://b11ngmv6oyp2y"]
 
 [ext_resource type="Script" path="res://scripts/items/phone.gd" id="1_2f7em"]
 [ext_resource type="Texture2D" uid="uid://dke4rqdqd5l30" path="res://assets/item_assets/item_set.png" id="2_7ghji"]
