@@ -1,16 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj0qb6l1mhekv"]
+[gd_scene load_steps=7 format=3 uid="uid://cj0qb6l1mhekv"]
 
-[ext_resource type="Script" path="res://scripts/oil.gd" id="1_1d7pn"]
-[ext_resource type="Texture2D" uid="uid://bkyfg4gwu6k1m" path="res://Assets/item_assets/oil.png" id="1_whvgt"]
+[ext_resource type="Script" path="res://scripts/items/oil.gd" id="1_1d7pn"]
+[ext_resource type="Texture2D" uid="uid://dke4rqdqd5l30" path="res://assets/item_assets/item_set.png" id="2_74jtq"]
+[ext_resource type="Texture2D" uid="uid://cuxj4yq4o16ir" path="res://assets/player_assets/light_circle.png" id="3_bx2ma"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m4u2g"]
 radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vqfr"]
+atlas = ExtResource("2_74jtq")
+region = Rect2(6, 4, 18, 28)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_myx6h"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_whvgt")
+"texture": SubResource("AtlasTexture_0vqfr")
 }],
 "loop": true,
 "name": &"default",
@@ -25,7 +30,13 @@ scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_m4u2g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.04, 0.04)
 sprite_frames = SubResource("SpriteFrames_myx6h")
+
+[node name="ItemLight" type="PointLight2D" parent="."]
+scale = Vector2(0.15, 0.15)
+color = Color(0.909804, 0.815686, 0.152941, 1)
+energy = 2.0
+blend_mode = 2
+texture = ExtResource("3_bx2ma")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

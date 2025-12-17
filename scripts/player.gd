@@ -1,16 +1,18 @@
 extends CharacterBody2D
 
-const speed = 100
+const speed = 150
 
 @onready var anim := $"Walk Animations"
 @onready var timer := $Timer
-@onready var oil := $Oil
+@onready var oil := $CanvasLayer/Oil
 @onready var light := $PlayerLight
 
 var facing := Vector2.DOWN
 
 @export var max_time := 100  # 100%
 @export var current_time := max_time
+
+var items := 0 # starting # of items
 
 func _ready():
 	oil.value = max_time
@@ -63,6 +65,6 @@ func _on_timer_timeout():
 	if current_time <= 0:
 		current_time = 0
 		timer.stop()
-		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
+		get_tree().change_scene_to_file("res://scenes/loss_screen.tscn")
 	oil.value = current_time
-	light.energy = float(current_time) / max_time
+	light.energy = (float(current_time) / max_time) * 2
