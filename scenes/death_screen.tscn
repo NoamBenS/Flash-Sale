@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=3 uid="uid://dc5o16g6pa7i8"]
+
+[ext_resource type="Texture2D" uid="uid://d3w53g7ajnei7" path="res://assets/mall.png" id="1_dwo6e"]
+[ext_resource type="Script" path="res://scripts/death_screen.gd" id="1_ioub7"]
+[ext_resource type="FontFile" uid="uid://c1yjllkegadr7" path="res://assets/GrapeSoda.ttf" id="2_mqh5l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfw3d"]
+bg_color = Color(0.160784, 0.560784, 0.882353, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwety"]
+bg_color = Color(0.117647, 0.490196, 0.807843, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ns25"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vyrcq"]
+bg_color = Color(0.160784, 0.560784, 0.882353, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wraau"]
+bg_color = Color(0.117647, 0.490196, 0.807843, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wtkkp"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 7
+
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ioub7")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_dwo6e")
+
+[node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 281.0
+offset_right = 598.0
+offset_bottom = 328.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mqh5l")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_wfw3d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gwety")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ns25")
+text = "Main Menu"
+
+[node name="ReplayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 226.0
+offset_right = 597.0
+offset_bottom = 273.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mqh5l")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_vyrcq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wraau")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wtkkp")
+text = "Play Again?"
+
+[node name="LossText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 128.0
+offset_right = 710.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(0.877414, 0, 0.00891391, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mqh5l")
+theme_override_font_sizes/font_size = 98
+text = "YOU LOST!"
+
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_mainmenubutton_pressed"]
+[connection signal="pressed" from="ReplayButton" to="." method="_on_replaybutton_pressed"]
