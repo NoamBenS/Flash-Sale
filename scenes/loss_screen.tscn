@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cw3prjio6x81h"]
+[gd_scene load_steps=10 format=3 uid="uid://dm8bhvd00kum5"]
 
 [ext_resource type="Script" path="res://scripts/loss_screen.gd" id="1_vi5rf"]
 [ext_resource type="Texture2D" uid="uid://d3w53g7ajnei7" path="res://assets/mall.png" id="2_duyec"]

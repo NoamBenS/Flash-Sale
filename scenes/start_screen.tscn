@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvgbbfjuio5m"]
+[gd_scene load_steps=9 format=3 uid="uid://d00s7v1dg8ev8"]
 
 [ext_resource type="Script" path="res://scripts/start_button.gd" id="1_7mgay"]
 [ext_resource type="FontFile" uid="uid://c1yjllkegadr7" path="res://assets/GrapeSoda.ttf" id="2_7mgay"]
