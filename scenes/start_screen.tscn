@@ -62,16 +62,10 @@ script = ExtResource("1_7mgay")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -509.0
-offset_top = -310.5
-offset_right = 509.0
-offset_bottom = 285.5
-grow_horizontal = 0
-grow_vertical = 2
+offset_left = -514.0
+offset_top = -302.0
+offset_right = 513.0
+offset_bottom = 302.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_dyxgk")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -81,9 +75,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -109.0
+offset_left = -86.0
 offset_top = -37.0
-offset_right = 76.0
+offset_right = 99.0
 offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
