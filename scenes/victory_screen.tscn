@@ -1,8 +1,23 @@
-[gd_scene load_steps=11 format=3 uid="uid://g5dsovmjgbnx"]
+[gd_scene load_steps=10 format=3 uid="uid://bgtalclen5ch4"]
 
-[ext_resource type="Script" path="res://victory_screen.gd" id="1_pfcnd"]
-[ext_resource type="Texture2D" uid="uid://bupve7oshmmw1" path="res://assets/mall.png" id="1_wdgif"]
+[ext_resource type="Texture2D" uid="uid://d3w53g7ajnei7" path="res://assets/mall.png" id="1_wdgif"]
 [ext_resource type="FontFile" uid="uid://c1yjllkegadr7" path="res://assets/GrapeSoda.ttf" id="2_pfcnd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66hvp"]
+bg_color = Color(0.160784, 0.560784, 0.882353, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4hde"]
+bg_color = Color(0.117647, 0.490196, 0.807843, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 7
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbi6c"]
 bg_color = Color(1, 1, 1, 1)
@@ -12,16 +27,26 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 shadow_size = 7
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4hde"]
-bg_color = Color(0.11764706, 0.49019608, 0.80784315, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfcnd"]
+bg_color = Color(0.338037, 0.623612, 0.877073, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 shadow_size = 7
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66hvp"]
-bg_color = Color(0.16078432, 0.56078434, 0.88235295, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ll51u"]
+bg_color = Color(0.15991, 0.560967, 0.881921, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1juoc"]
+bg_color = Color(0.117992, 0.49038, 0.809314, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -37,32 +62,6 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 shadow_size = 7
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1juoc"]
-bg_color = Color(0.11799214, 0.49038, 0.80931354, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-shadow_size = 7
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ll51u"]
-bg_color = Color(0.1599102, 0.5609667, 0.881921, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-shadow_size = 7
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfcnd"]
-bg_color = Color(0.33803707, 0.62361246, 0.87707275, 1)
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-shadow_size = 7
-
 [node name="VictoryScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -70,7 +69,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pfcnd")
 
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -84,14 +82,14 @@ offset_left = 426.0
 offset_top = 281.0
 offset_right = 598.0
 offset_bottom = 328.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.9955804, 0.99558026, 0.99558026, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.99558, 0.99558, 0.99558, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_pfcnd")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_wbi6c")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_u4hde")
 theme_override_styles/hover = SubResource("StyleBoxFlat_66hvp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u4hde")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wbi6c")
 text = "Main Menu"
 
 [node name="replaybutton" type="Button" parent="."]
@@ -100,16 +98,16 @@ offset_left = 425.0
 offset_top = 226.0
 offset_right = 597.0
 offset_bottom = 273.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_pfcnd")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_rixwf")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_1juoc")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ll51u")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_pfcnd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ll51u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1juoc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rixwf")
 text = "Play Again?"
 
 [node name="victorytext" type="Label" parent="."]
