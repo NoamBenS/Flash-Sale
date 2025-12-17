@@ -1,19 +1,25 @@
-extends CharacterBody2D #if your player moves
+extends Node
 
-# Reference to the DialogManager node in the scene
-@onready var dialog_manager = get_node("/root/YourScene/DialogManager") 
-# Replace '/root/YourScene/DialogManager' with the actual path in your scene tree
+@export var dialog_manager: Node # Drag your DialogManager node in the editor
 
 func _ready():
-	# Lines you want the player to say
-	var player_lines = [
-		"Hello there!",
-		"Oh no! The malls closing!",
-        "Help me find 8 presents for Channukah!"
-	]
-	
-	# Position where the TextBox should appear (above the player)
-	var text_box_position = global_position + Vector2(0, -50)  # adjust Y to move box above player
-	
-	# Start the dialog
-	dialog_manager.start_dialog(text_box_position, player_lines)
+	# Instantiate the player
+	var player_instance = preload("res://scenes/character/player.tscn").instantiate()
+	add_child(player_instance)
+
+	# Disable darkness and health bar for this scene only
+	player_instance.enable_darkness = false
+	if player_instance.has_node("PlayerLight"):
+		player_instance.get_node("PlayerLight").visible = false
+	if player_instance.has_node("HealthBar"):
+		player_instance.get_node("HealthBar").visible = false
+
+	# Start dialog
+	var dialog_manager_script = dialog_manager as DialogManager
+	if dialog_manager_script != null:
+		var lines = [
+			"Hello there, adventurer!",
+			"Welcome to our village.",
+			"Be careful, monsters lurk nearby..."
+		]
+		dialog_manager_script.start_dialog(Vector2(248, 208), lines)

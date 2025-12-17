@@ -16,10 +16,6 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Flash Sale/icon.svg"
 <<<<<<<HEADrun/main_scene="uid://dvgbbfjuio5m"
 
-[autoload]
-
-DialogManager="*res://singletons/DialogManager.gd"
-
 [display]
 
 window/size/viewport_width=1024
