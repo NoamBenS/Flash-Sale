@@ -1,8 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6j328thae78v"]
+[gd_scene load_steps=11 format=3 uid="uid://cqck1q5n7nxlf"]
 
-[ext_resource type="Script" uid="uid://drpytiqfflt2" path="res://scenes/victory_screen.gd" id="1_pfcnd"]
+[ext_resource type="Script" uid="uid://drpytiqfflt2" path="res://victory_screen.gd" id="1_pfcnd"]
 [ext_resource type="Texture2D" uid="uid://bupve7oshmmw1" path="res://assets/mall.png" id="1_wdgif"]
 [ext_resource type="FontFile" uid="uid://c1yjllkegadr7" path="res://assets/GrapeSoda.ttf" id="2_pfcnd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbi6c"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4hde"]
+bg_color = Color(0.11764706, 0.49019608, 0.80784315, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66hvp"]
+bg_color = Color(0.16078432, 0.56078434, 0.88235295, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 7
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rixwf"]
 bg_color = Color(1, 1, 1, 1)
@@ -54,12 +78,28 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_wdgif")
 
+[node name="mainmenubutton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 281.0
+offset_right = 598.0
+offset_bottom = 329.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.9955804, 0.99558026, 0.99558026, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pfcnd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_wbi6c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u4hde")
+theme_override_styles/hover = SubResource("StyleBoxFlat_66hvp")
+text = "Main Menu"
+
 [node name="replaybutton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 410.0
-offset_top = 278.0
-offset_right = 610.0
-offset_bottom = 342.0
+offset_left = 425.0
+offset_top = 226.0
+offset_right = 597.0
+offset_bottom = 273.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -74,13 +114,14 @@ text = "Play Again?"
 
 [node name="victorytext" type="Label" parent="."]
 layout_mode = 0
-offset_left = 343.0
-offset_top = 175.0
-offset_right = 708.0
-offset_bottom = 287.0
+offset_left = 340.0
+offset_top = 128.0
+offset_right = 705.0
+offset_bottom = 240.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("2_pfcnd")
 theme_override_font_sizes/font_size = 99
 text = "VICTORY!"
 
+[connection signal="pressed" from="mainmenubutton" to="." method="_on_mainmenubutton_pressed"]
 [connection signal="pressed" from="replaybutton" to="." method="_on_replaybutton_pressed"]
