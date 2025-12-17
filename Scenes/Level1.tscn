@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ermrypl24ne5" path="res://scenes/character/player.tscn" id="1_ogqc2"]
 [ext_resource type="PackedScene" uid="uid://cj0qb6l1mhekv" path="res://scenes/items/oil.tscn" id="1_spbaf"]
 [ext_resource type="Texture2D" uid="uid://dmn3epmldl303" path="res://assets/Solaria Demo Tiles.png" id="3_ddkhc"]
-[ext_resource type="PackedScene" uid="uid://cyg1l6a8fbhwp" path="res://scenes/background.tscn" id="4_5i3p7"]
+[ext_resource type="PackedScene" path="res://scenes/background.tscn" id="4_5i3p7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s662r"]
 texture = ExtResource("3_ddkhc")
