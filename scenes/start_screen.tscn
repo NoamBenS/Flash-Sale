@@ -56,6 +56,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 shadow_size = 7
+shadow_offset = Vector2(6, 6)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2jwc"]
 bg_color = Color(0.11764706, 0.49019608, 0.80784315, 1)
@@ -65,6 +66,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 shadow_color = Color(0, 0, 0, 0.5686275)
 shadow_size = 7
+shadow_offset = Vector2(6, 6)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm208"]
 bg_color = Color(0.35686275, 0.5647059, 1, 1)
@@ -73,6 +75,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 shadow_size = 7
+shadow_offset = Vector2(6, 6)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -93,23 +96,12 @@ offset_right = 513.0
 offset_bottom = 302.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_dyxgk")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
 offset_left = -86.0
-offset_top = -37.0
+offset_top = -60.0
 offset_right = 99.0
-offset_bottom = 45.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 10
-
-[node name="Start" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+offset_bottom = -24.0
 size_flags_vertical = 6
 theme_override_colors/font_color = Color(0.0135927, 0.0182115, 0.0615664, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -122,8 +114,12 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_r4hg3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_r4hg3")
 text = "Start Game"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = -86.0
+offset_top = 26.5
+offset_right = 99.0
+offset_bottom = 62.5
 size_flags_vertical = 6
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -137,8 +133,12 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_r4hg3")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_r4hg3")
 text = "Exit"
 
-[node name="Credits" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Credits" type="Button" parent="."]
+layout_mode = 0
+offset_left = -86.0
+offset_top = -17.5
+offset_right = 99.0
+offset_bottom = 18.5
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
@@ -171,6 +171,6 @@ text = "Flash Sale"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

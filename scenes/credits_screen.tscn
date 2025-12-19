@@ -40,14 +40,14 @@ texture = ExtResource("1_wiy8m")
 
 [node name="Credits" type="Label" parent="Background"]
 layout_mode = 0
-offset_left = 422.0
-offset_top = 119.0
-offset_right = 562.0
-offset_bottom = 159.0
+offset_left = 446.0
+offset_top = 120.0
+offset_right = 586.0
+offset_bottom = 160.0
 theme_override_colors/font_color = Color(0.4083466, 0.70756143, 0.9870544, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_m2eu1")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 36
 text = "CREDITS:"
 
 [node name="Names" type="Label" parent="Background"]
@@ -59,19 +59,21 @@ offset_bottom = 330.4925
 rotation = -0.002370119
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_m2eu1")
-theme_override_font_sizes/font_size = 36
-text = "Noam Ben Simon
-Shalva Englander
+theme_override_font_sizes/font_size = 27
+text = "Game Development:
+Noam Ben Simon
 Zohar Ben Simon
- Danae Bachenheimer"
+ Danae Bachenheimer
+Art: 
+Shalva Englander"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Exit Button" type="Button" parent="."]
-offset_left = 446.0
-offset_top = 337.0
-offset_right = 557.0
-offset_bottom = 368.0
+offset_left = 456.0
+offset_top = 354.0
+offset_right = 559.0
+offset_bottom = 382.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
