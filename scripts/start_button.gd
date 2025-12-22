@@ -5,11 +5,14 @@ extends Control
 @onready var skip_label := $SkipLabel
 
 var skipping := false
+var started := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	video_player.play()
-	skip_label.visible = true
+	if (not started):
+		video_player.play()
+		skip_label.visible = true
+		started = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

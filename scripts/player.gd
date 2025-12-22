@@ -29,6 +29,9 @@ func _ready():
 
 func _physics_process(_delta):
 	
+	if (Input.is_action_just_pressed("escape")):
+		get_tree().change_scene_to_file("res://scenes/start_screen.tscn")
+	
 	if (items == 3 && (not collected_3)):
 		collected_3 = true
 		_next_room()
