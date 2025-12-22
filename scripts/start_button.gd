@@ -1,15 +1,34 @@
 extends Control
 
 @onready var splash = $Level1Splash
+@onready var video_player := $IntroVideo
+@onready var skip_label := $SkipLabel
+
+var skipping := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	video_player.play()
+	skip_label.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if skipping:
+		return
+	# Skip input
+	if Input.is_action_just_pressed("skip"):
+		skipping = true
+		end_video()
+
+	# Video finished
+	if not video_player.is_playing() and not skipping:
+		skipping = true
+		end_video()
+
+func end_video():
+	video_player.stop()
+	skip_label.visible = false
 
 
 func _on_start_pressed() -> void:

@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://d00s7v1dg8ev8"]
+[gd_scene load_steps=14 format=3 uid="uid://d00s7v1dg8ev8"]
 
 [ext_resource type="Script" path="res://scripts/start_button.gd" id="1_7mgay"]
 [ext_resource type="FontFile" uid="uid://c1yjllkegadr7" path="res://assets/GrapeSoda.ttf" id="2_7mgay"]
 [ext_resource type="Texture2D" uid="uid://d3w53g7ajnei7" path="res://assets/mall.png" id="2_60ddj"]
 [ext_resource type="PackedScene" uid="uid://b0qmhfhsdmdkp" path="res://scenes/levels/intermission_splashes/level_1_splash.tscn" id="2_cr3ev"]
+[ext_resource type="VideoStream" path="res://assets/CutScene.ogv" id="5_4pav4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dyxgk"]
 texture = ExtResource("2_60ddj")
@@ -174,6 +175,25 @@ theme_override_font_sizes/font_size = 100
 text = "Flash Sale"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="IntroVideo" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = -511.0
+offset_top = -306.5
+offset_right = 513.0
+offset_bottom = 301.5
+mouse_filter = 2
+stream = ExtResource("5_4pav4")
+
+[node name="SkipLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 251.5
+offset_right = 503.0
+offset_bottom = 291.5
+theme_override_fonts/normal_font = ExtResource("2_7mgay")
+theme_override_font_sizes/normal_font_size = 30
+text = "Press space to skip"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
