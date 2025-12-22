@@ -259,42 +259,46 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 visible = false
-offset_left = 130.0
-offset_top = 270.0
-offset_right = 364.0
-offset_bottom = 286.0
+offset_left = 230.0
+offset_top = 545.0
+offset_right = 826.0
+offset_bottom = 593.0
 theme_override_fonts/normal_font = ExtResource("3_ylkwr")
+theme_override_font_sizes/normal_font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_4ax77")
 text = "Collect the three items in this room!"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer"]
 visible = false
-offset_left = 122.0
-offset_top = 271.0
-offset_right = 373.0
-offset_bottom = 288.0
+offset_left = 207.0
+offset_top = 548.0
+offset_right = 838.0
+offset_bottom = 593.0
 theme_override_fonts/normal_font = ExtResource("3_ylkwr")
+theme_override_font_sizes/normal_font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_jpfk2")
 text = "Collect the two last items in this room!"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer"]
 visible = false
-offset_left = 79.0
-offset_top = 272.0
-offset_right = 423.0
-offset_bottom = 289.0
+offset_left = 27.0
+offset_top = 548.0
+offset_right = 904.0
+offset_bottom = 590.0
 theme_override_fonts/normal_font = ExtResource("3_ylkwr")
+theme_override_font_sizes/normal_font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_a4f47")
-text = "Get back to the entrance before your light runs out!"
+text = "Now to get back to the entrance before my light dies!"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer"]
 visible = false
-offset_left = 91.0
-offset_top = 272.0
-offset_right = 414.0
-offset_bottom = 289.0
+offset_left = 17.0
+offset_top = 549.0
+offset_right = 914.0
+offset_bottom = 589.0
 theme_override_fonts/normal_font = ExtResource("3_ylkwr")
+theme_override_font_sizes/normal_font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_a4f47")
-text = "We got everything here, let's go to the next room!"
+text = "I got everything here, now I gotta find the next store!"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

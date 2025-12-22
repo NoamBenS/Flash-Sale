@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 150
+const speed = 200
 
 @onready var anim := $"Walk Animations"
 @onready var timer := $Timer
@@ -78,7 +78,7 @@ func update_animation():
 	return
 
 func _on_timer_timeout():
-	current_time -= 5 # decrease by 2%/sec
+	current_time -= 3
 	if current_time <= 0:
 		current_time = 0
 		timer.stop()
@@ -89,23 +89,23 @@ func _on_timer_timeout():
 func _show_three_items():
 	var text := $CanvasLayer/RichTextLabel
 	text.visible = true
-	await get_tree().create_timer(2.0).timeout  # wait 2 seconds
+	await get_tree().create_timer(3.0).timeout  # wait 2 seconds
 	text.visible = false
 
 func _show_two_items():
 	var text := $CanvasLayer/RichTextLabel2
 	text.visible = true
-	await get_tree().create_timer(2.0).timeout  # wait 2 seconds
+	await get_tree().create_timer(3.0).timeout  # wait 2 seconds
 	text.visible = false
 	
 func _next_room():
-	var text := $Canvaslayer/RichTextLabel4
+	var text := $CanvasLayer/RichTextLabel4
 	text.visible = true
-	await get_tree().create_timer(2.0).timeout  # wait 2 seconds
+	await get_tree().create_timer(3.0).timeout  # wait 2 seconds
 	text.visible = false
 
 func _gauntlet_text():
 	var text := $CanvasLayer/RichTextLabel3
 	text.visible = true
-	await get_tree().create_timer(2.0).timeout  # wait 2 seconds
+	await get_tree().create_timer(3.0).timeout  # wait 2 seconds
 	text.visible = false
