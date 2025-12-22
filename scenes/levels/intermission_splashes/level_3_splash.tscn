@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://vso23eo4c0pj"]
+
+[ext_resource type="Texture2D" uid="uid://bbqxjf41ranf3" path="res://assets/level_image_assets/level_3_card.jpeg" id="1_qh7dp"]
+
+[node name="Level3Splash" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qh7dp")

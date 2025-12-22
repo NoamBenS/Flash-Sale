@@ -9,6 +9,7 @@
 [node name="Game" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("1_2ar3m")]
+z_index = -10
 position = Vector2(2073, -185)
 
 [node name="Level1" parent="." instance=ExtResource("1_7208t")]

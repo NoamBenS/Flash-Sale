@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://d00s7v1dg8ev8"]
+[gd_scene load_steps=13 format=3 uid="uid://d00s7v1dg8ev8"]
 
 [ext_resource type="Script" path="res://scripts/start_button.gd" id="1_7mgay"]
 [ext_resource type="FontFile" uid="uid://c1yjllkegadr7" path="res://assets/GrapeSoda.ttf" id="2_7mgay"]
 [ext_resource type="Texture2D" uid="uid://d3w53g7ajnei7" path="res://assets/mall.png" id="2_60ddj"]
+[ext_resource type="PackedScene" uid="uid://b0qmhfhsdmdkp" path="res://scenes/levels/intermission_splashes/level_1_splash.tscn" id="2_cr3ev"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dyxgk"]
 texture = ExtResource("2_60ddj")
@@ -87,6 +88,9 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7mgay")
+
+[node name="Level1Splash" parent="." instance=ExtResource("2_cr3ev")]
+visible = false
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

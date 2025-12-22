@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dm8bhvd00kum5"]
+[gd_scene load_steps=11 format=3 uid="uid://dm8bhvd00kum5"]
 
 [ext_resource type="Script" path="res://scripts/loss_screen.gd" id="1_vi5rf"]
-[ext_resource type="Texture2D" uid="uid://d3w53g7ajnei7" path="res://assets/mall.png" id="2_duyec"]
+[ext_resource type="PackedScene" uid="uid://b0qmhfhsdmdkp" path="res://scenes/levels/intermission_splashes/level_1_splash.tscn" id="2_vcmbt"]
+[ext_resource type="Texture2D" uid="uid://csxjf6a0tpsjq" path="res://assets/level_image_assets/fail_card.jpeg" id="2_xrp0f"]
 [ext_resource type="FontFile" uid="uid://c1yjllkegadr7" path="res://assets/GrapeSoda.ttf" id="3_p5yp5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfw3d"]
@@ -61,11 +62,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vi5rf")
 
+[node name="Level1Splash" parent="." instance=ExtResource("2_vcmbt")]
+visible = false
+
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1023.0
 offset_bottom = 608.0
-texture = ExtResource("2_duyec")
+texture = ExtResource("2_xrp0f")
 
 [node name="MainMenuButton" type="Button" parent="."]
 layout_mode = 0
@@ -96,18 +100,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_vyrcq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wraau")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wtkkp")
 text = "Play Again?"
-
-[node name="LossText" type="Label" parent="."]
-layout_mode = 0
-offset_left = 318.0
-offset_top = 128.0
-offset_right = 710.0
-offset_bottom = 240.0
-theme_override_colors/font_color = Color(0.877414, 0, 0.00891391, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_p5yp5")
-theme_override_font_sizes/font_size = 98
-text = "YOU LOST!"
 
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_mainmenubutton_pressed"]
 [connection signal="pressed" from="ReplayButton" to="." method="_on_replaybutton_pressed"]
