@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://r0ctjoxg2oa4" path="res://scenes/background.tscn" id="4_ffrrv"]
 [ext_resource type="Texture2D" uid="uid://dxqmc7p5cxn1t" path="res://assets/background/item_transitions.PNG" id="7_ysaul"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8rtbg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yjkbd"]
 texture = ExtResource("3_kxxb4")
 separation = Vector2i(3, 3)
 texture_region_size = Vector2i(18, 18)
@@ -24,12 +24,12 @@ texture_region_size = Vector2i(18, 18)
 
 [sub_resource type="TileSet" id="TileSet_i7f56"]
 physics_layer_0/collision_layer = 1
-sources/4 = SubResource("TileSetAtlasSource_8rtbg")
+sources/4 = SubResource("TileSetAtlasSource_yjkbd")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kqn7"]
 texture = ExtResource("7_ysaul")
 separation = Vector2i(0, 1)
-texture_region_size = Vector2i(40, 20)
+texture_region_size = Vector2i(3, 3)
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0

@@ -75,7 +75,6 @@ tile_map_data = PackedByteArray("AAApAA4AAAAAAAEAAAABAAYAAAAAAAIAAAA=")
 tile_set = SubResource("TileSet_t5ote")
 
 [node name="Background" parent="." instance=ExtResource("3_rmldx")]
-visible = false
 z_index = -10
 position = Vector2(-353, -427)
 scale = Vector2(2, 2)
