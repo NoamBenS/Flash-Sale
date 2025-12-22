@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bvcvtkdmnmnx5"]
+[gd_scene load_steps=13 format=4 uid="uid://cjqbga2khgpvs"]
 
 [ext_resource type="PackedScene" uid="uid://cj0qb6l1mhekv" path="res://scenes/items/oil.tscn" id="1_0h4qk"]
 [ext_resource type="PackedScene" uid="uid://c7xboqe1xtt7o" path="res://scenes/items/hat.tscn" id="1_iww6i"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b11ngmv6oyp2y" path="res://scenes/items/phone.tscn" id="3_2ocyu"]
 [ext_resource type="Texture2D" uid="uid://c60vj1yestgs6" path="res://assets/background/maze_tiles.png" id="3_pmbem"]
 [ext_resource type="PackedScene" uid="uid://r0ctjoxg2oa4" path="res://scenes/background.tscn" id="4_g2ebt"]
+[ext_resource type="Texture2D" uid="uid://dxqmc7p5cxn1t" path="res://assets/background/item_transitions.PNG" id="6_i8gtb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s662r"]
 resource_name = "MazeTiles"
@@ -28,6 +29,17 @@ texture_region_size = Vector2i(18, 18)
 [sub_resource type="TileSet" id="TileSet_67mhx"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_s662r")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v5q1g"]
+texture = ExtResource("6_i8gtb")
+separation = Vector2i(0, 1)
+texture_region_size = Vector2i(40, 20)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_63li0"]
+sources/0 = SubResource("TileSetAtlasSource_v5q1g")
 
 [node name="Level1" type="Node2D"]
 position = Vector2(153, 108)
@@ -52,12 +64,17 @@ tile_set = SubResource("TileSet_67mhx")
 rendering_quadrant_size = 64
 format = 2
 
-[node name="Layer1" type="TileMapLayer" parent="TileMap"]
+[node name="BuildingBlocks" type="TileMapLayer" parent="TileMap"]
 z_index = -15
 use_parent_material = true
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAD9//7/AAAAAAEAAAD+//7/AAAAAAEAAAD///7/AAAAAAEAAAAAAP7/AAAAAAEAAAABAP7/AAAAAAEAAAACAP7/AAAAAAEAAAADAP7/AAAAAAEAAAAEAP7/AAAAAAEAAAAFAP7/AAAAAAEAAAAGAP7/AAAAAAEAAAAHAP7/AAAAAAEAAAAIAP7/AAAAAAEAAAAIAP//AAAAAAEAAAAIAAAAAAAAAAEAAAAIAAEAAAAAAAEAAAAIAAIAAAAAAAEAAAAIAAMAAAAAAAAAAAD9/wgAAAAAAAEAAAD9/wcAAAAAAAEAAAD9/wYAAAAAAAEAAAD9/wEAAAAAAAEAAAD9////AAAAAAEAAAD9/wAAAAAAAAEAAAD/////AAAAAAEAAAD//wAAAAAAAAEAAAAAAAAAAAAAAAEAAAACAP//AAAAAAEAAAACAAAAAAAAAAEAAAAEAAAAAAAAAAEAAAAGAP//AAAAAAEAAAAFAAEAAAAAAAEAAAAGAAEAAAAAAAEAAAAGAAIAAAAAAAEAAAAGAAMAAAAAAAEAAAAHAAMAAAAAAAAAAAACAAcAAAAAAAEAAAD//wYAAAAAAAEAAAACAAQAAAAAAAEAAAAHAAkAAAAAAAEAAAAGAAkAAAAAAAEAAAAFAAkAAAAAAAEAAAAEAAkAAAAAAAEAAAADAAkAAAAAAAEAAAACAAkAAAAAAAEAAAABAAkAAAAAAAEAAAAAAAkAAAAAAAEAAAD//wkAAAAAAAEAAAD+/wkAAAAAAAEAAAD9/wkAAAAAAAEAAAACAAgAAAAAAAEAAAABAAcAAAAAAAEAAAAAAAcAAAAAAAEAAAD//wcAAAAAAAEAAAACAAUAAAAAAAEAAAABAAMAAAAAAAEAAAABAAIAAAAAAAEAAAAEAAgAAAAAAAEAAAAGAAcAAAAAAAEAAAAGAAYAAAAAAAEAAAAHAAYAAAAAAAEAAAAFAAYAAAAAAAEAAAAEAAYAAAAAAAEAAAAEAAUAAAAAAAEAAAAEAAQAAAAAAAEAAAAEAAMAAAAAAAEAAAADAAIAAAAAAAEAAAAIAAYAAAAAAAAAAAAIAAcAAAAAAAEAAAAIAAgAAAAAAAEAAAAIAAkAAAAAAAEAAAAJAAMAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAMAAAAAAAAAAAD//wEAAAAAAAEAAAD9/wUAAAAAAAEAAAD9/wQAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_67mhx")
+
+[node name="ExitBlocks" type="TileMapLayer" parent="TileMap"]
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAANAAYAAAAAAAIAAAA=")
+tile_set = SubResource("TileSet_63li0")
 
 [node name="Character" parent="." instance=ExtResource("2_jdg4k")]
 position = Vector2(-115, 207)

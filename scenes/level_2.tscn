@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://0kmlyg4dkjve"]
+[gd_scene load_steps=13 format=4 uid="uid://0kmlyg4dkjve"]
 
 [ext_resource type="PackedScene" uid="uid://cj0qb6l1mhekv" path="res://scenes/items/oil.tscn" id="1_fffyl"]
 [ext_resource type="PackedScene" uid="uid://cbmdargjvypv" path="res://scenes/items/cookie.tscn" id="2_e3j6w"]
@@ -7,10 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://ew6k3gqexey0" path="res://scenes/items/sweater.tscn" id="3_jwct8"]
 [ext_resource type="Texture2D" uid="uid://c60vj1yestgs6" path="res://assets/background/maze_tiles.png" id="3_kxxb4"]
 [ext_resource type="PackedScene" uid="uid://r0ctjoxg2oa4" path="res://scenes/background.tscn" id="4_ffrrv"]
+[ext_resource type="Texture2D" uid="uid://dxqmc7p5cxn1t" path="res://assets/background/item_transitions.PNG" id="7_ysaul"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8rtbg"]
 texture = ExtResource("3_kxxb4")
-separation = Vector2i(10, 10)
+separation = Vector2i(3, 3)
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -24,6 +25,17 @@ texture_region_size = Vector2i(18, 18)
 [sub_resource type="TileSet" id="TileSet_i7f56"]
 physics_layer_0/collision_layer = 1
 sources/4 = SubResource("TileSetAtlasSource_8rtbg")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kqn7"]
+texture = ExtResource("7_ysaul")
+separation = Vector2i(0, 1)
+texture_region_size = Vector2i(40, 20)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_x0x0n"]
+sources/0 = SubResource("TileSetAtlasSource_1kqn7")
 
 [node name="Level2" type="Node2D"]
 
@@ -53,7 +65,7 @@ color = Color(0, 0, 0, 1)
 tile_set = SubResource("TileSet_i7f56")
 format = 2
 
-[node name="Layer1" type="TileMapLayer" parent="TileMap"]
+[node name="BuildingBlocks" type="TileMapLayer" parent="TileMap"]
 z_index = -5
 use_parent_material = true
 scale = Vector2(4, 4)
@@ -61,6 +73,11 @@ tile_map_data = PackedByteArray("AAD9//7/BAAAAAAAAAD+//7/BAAAAAAAAAD///7/BAAAAAA
 tile_set = SubResource("TileSet_i7f56")
 rendering_quadrant_size = 64
 collision_visibility_mode = 1
+
+[node name="ExitTiles" type="TileMapLayer" parent="TileMap"]
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAD5/xEAAAAAAAAAAAApAA4AAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_x0x0n")
 
 [node name="Background" parent="." instance=ExtResource("4_ffrrv")]
 z_index = -10
