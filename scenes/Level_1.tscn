@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cjqbga2khgpvs"]
+[gd_scene load_steps=15 format=4 uid="uid://cjqbga2khgpvs"]
 
 [ext_resource type="PackedScene" uid="uid://cj0qb6l1mhekv" path="res://scenes/items/oil.tscn" id="1_0h4qk"]
 [ext_resource type="PackedScene" uid="uid://c7xboqe1xtt7o" path="res://scenes/items/hat.tscn" id="1_iww6i"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c60vj1yestgs6" path="res://assets/background/maze_tiles.png" id="3_pmbem"]
 [ext_resource type="PackedScene" uid="uid://r0ctjoxg2oa4" path="res://scenes/background.tscn" id="4_g2ebt"]
 [ext_resource type="Texture2D" uid="uid://dxqmc7p5cxn1t" path="res://assets/background/item_transitions.PNG" id="6_i8gtb"]
+[ext_resource type="Script" path="res://scripts/enter_level_2_from_1.gd" id="9_70f14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s662r"]
 resource_name = "MazeTiles"
@@ -40,6 +41,9 @@ texture_region_size = Vector2i(40, 20)
 
 [sub_resource type="TileSet" id="TileSet_63li0"]
 sources/0 = SubResource("TileSetAtlasSource_v5q1g")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2re86"]
+size = Vector2(120.5, 51)
 
 [node name="Level1" type="Node2D"]
 position = Vector2(153, 108)
@@ -86,3 +90,12 @@ color = Color(0, 0, 0, 1)
 z_index = -15
 position = Vector2(-305, -82)
 scale = Vector2(2, 2)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("9_70f14")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(648.75, 310.5)
+shape = SubResource("RectangleShape2D_2re86")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

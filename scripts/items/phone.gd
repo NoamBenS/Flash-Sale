@@ -7,11 +7,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):  # make sure the colliding body is the player
 		body.items += 1
-	queue_free()
+		queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c7lwiogt5jecv"]
+[gd_scene load_steps=13 format=4 uid="uid://c7lwiogt5jecv"]
 
 [ext_resource type="PackedScene" uid="uid://ermrypl24ne5" path="res://scenes/character/player.tscn" id="1_m11yc"]
 [ext_resource type="PackedScene" uid="uid://cj0qb6l1mhekv" path="res://scenes/items/oil.tscn" id="1_qw5h6"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cq2vakfg4oqo3" path="res://scenes/items/nail_polish.tscn" id="2_q8t62"]
 [ext_resource type="PackedScene" uid="uid://r0ctjoxg2oa4" path="res://scenes/background.tscn" id="3_rmldx"]
 [ext_resource type="PackedScene" uid="uid://c5rf8e1gpi8yl" path="res://scenes/items/dreidel.tscn" id="3_ylxgo"]
+[ext_resource type="Script" path="res://scripts/level_2_entry_from_3.gd" id="8_c3krm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3oeoy"]
 texture = ExtResource("2_cdgto")
@@ -34,7 +35,10 @@ physics_layer_0/collision_layer = 1
 sources/4 = SubResource("TileSetAtlasSource_8tflj")
 sources/0 = SubResource("TileSetAtlasSource_3oeoy")
 
-[node name="Level3" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oa2co"]
+size = Vector2(59, 30)
+
+[node name="Level_3" type="Node2D"]
 
 [node name="Oil3" parent="." instance=ExtResource("1_qw5h6")]
 position = Vector2(652, 734)
@@ -78,3 +82,12 @@ tile_set = SubResource("TileSet_t5ote")
 z_index = -10
 position = Vector2(-353, -427)
 scale = Vector2(2, 2)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("8_c3krm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(35.5, 156)
+shape = SubResource("RectangleShape2D_oa2co")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

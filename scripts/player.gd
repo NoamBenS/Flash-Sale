@@ -12,7 +12,10 @@ var facing := Vector2.DOWN
 @export var max_time := 100  # 100%
 @export var current_time := max_time
 
-var items := 0 # starting # of items
+@export var items := 0 # starting # of items
+
+@export var entered_level_2 := false
+@export var entered_level_3 := false
 
 func _ready():
 	oil.value = max_time
