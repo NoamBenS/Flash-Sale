@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvqa6mhev5n4y"]
+
+[ext_resource type="Script" uid="uid://di40gnojx8rwk" path="res://scripts/credits_screen.gd" id="1_m2eu1"]
+[ext_resource type="Texture2D" uid="uid://bupve7oshmmw1" path="res://assets/mall.png" id="1_wiy8m"]
+[ext_resource type="FontFile" uid="uid://c1yjllkegadr7" path="res://assets/GrapeSoda.ttf" id="2_m2eu1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wiy8m"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2eu1"]
+bg_color = Color(0.11764706, 0.49019608, 0.80784315, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1amdp"]
+bg_color = Color(0.16078432, 0.56078434, 0.88235295, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 7
+
+[node name="Credits Screen" type="Node2D"]
+script = ExtResource("1_m2eu1")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 1020.0
+offset_bottom = 597.0
+texture = ExtResource("1_wiy8m")
+
+[node name="Credits" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 120.0
+offset_right = 586.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0.4083466, 0.70756143, 0.9870544, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_m2eu1")
+theme_override_font_sizes/font_size = 36
+text = "CREDITS:"
+
+[node name="Names" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 164.0
+offset_right = 656.0
+offset_bottom = 330.4925
+rotation = -0.002370119
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_m2eu1")
+theme_override_font_sizes/font_size = 27
+text = "Game Development:
+Noam Ben Simon
+Zohar Ben Simon
+ Danae Bachenheimer
+Art: 
+Shalva Englander"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit Button" type="Button" parent="."]
+offset_left = 456.0
+offset_top = 354.0
+offset_right = 559.0
+offset_bottom = 382.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_m2eu1")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_wiy8m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m2eu1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1amdp")
+text = "EXIT"
+
+[connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
