@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ermrypl24ne5"]
+[gd_scene load_steps=29 format=3 uid="uid://ermrypl24ne5"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_yga4i"]
 [ext_resource type="Texture2D" uid="uid://cffcwp2ycdlbp" path="res://assets/player_assets/LittleChanukahGuy.png" id="2_t23ks"]
@@ -172,6 +172,15 @@ bg_color = Color(0.649303, 0.718986, 0.777533, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bow7q"]
 bg_color = Color(0.651204, 0.602751, 0.387928, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ax77"]
+bg_color = Color(0.45172, 0.600907, 0.861546, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpfk2"]
+bg_color = Color(0.45098, 0.6, 0.862745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4f47"]
+bg_color = Color(0.45098, 0.6, 0.862745, 1)
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(104, 182)
 scale = Vector2(1.5, 1.5)
@@ -247,5 +256,45 @@ theme_override_font_sizes/normal_font_size = 75
 text = "Oil"
 autowrap_mode = 0
 metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
+offset_left = 130.0
+offset_top = 270.0
+offset_right = 364.0
+offset_bottom = 286.0
+theme_override_fonts/normal_font = ExtResource("3_ylkwr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ax77")
+text = "Collect the three items in this room!"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
+offset_left = 122.0
+offset_top = 271.0
+offset_right = 373.0
+offset_bottom = 288.0
+theme_override_fonts/normal_font = ExtResource("3_ylkwr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jpfk2")
+text = "Collect the two last items in this room!"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
+offset_left = 79.0
+offset_top = 272.0
+offset_right = 423.0
+offset_bottom = 289.0
+theme_override_fonts/normal_font = ExtResource("3_ylkwr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a4f47")
+text = "Get back to the entrance before your light runs out!"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
+offset_left = 91.0
+offset_top = 272.0
+offset_right = 414.0
+offset_bottom = 289.0
+theme_override_fonts/normal_font = ExtResource("3_ylkwr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a4f47")
+text = "We got everything here, let's go to the next room!"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

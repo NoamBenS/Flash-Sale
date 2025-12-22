@@ -17,12 +17,27 @@ var facing := Vector2.DOWN
 @export var entered_level_2 := false
 @export var entered_level_3 := false
 
+var collected_3 := false
+var collected_6 := false
+var collected_8 := false
+
 func _ready():
 	oil.value = max_time
 	current_time = max_time
+	await _show_three_items()
 	timer.start()
 
 func _physics_process(_delta):
+	
+	if (items == 3 && (not collected_3)):
+		collected_3 = true
+		_next_room()
+	if (items == 6 && (not collected_6)):
+		collected_6 = true
+		_next_room()
+	if (items == 8 && (not collected_8)):
+		collected_8 = true
+		_gauntlet_text()
 	
 	var direction := Vector2.ZERO
 
@@ -61,7 +76,6 @@ func update_animation():
 		else:
 			anim.play("walk_up")
 	return
-	
 
 func _on_timer_timeout():
 	current_time -= 5 # decrease by 2%/sec
@@ -71,3 +85,27 @@ func _on_timer_timeout():
 		get_tree().change_scene_to_file("res://scenes/loss_screen.tscn")
 	oil.value = current_time
 	light.energy = (float(current_time) / max_time) * 2
+	
+func _show_three_items():
+	var text := $CanvasLayer/RichTextLabel
+	text.visible = true
+	await get_tree().create_timer(2.0).timeout  # wait 2 seconds
+	text.visible = false
+
+func _show_two_items():
+	var text := $CanvasLayer/RichTextLabel2
+	text.visible = true
+	await get_tree().create_timer(2.0).timeout  # wait 2 seconds
+	text.visible = false
+	
+func _next_room():
+	var text := $Canvaslayer/RichTextLabel4
+	text.visible = true
+	await get_tree().create_timer(2.0).timeout  # wait 2 seconds
+	text.visible = false
+
+func _gauntlet_text():
+	var text := $CanvasLayer/RichTextLabel3
+	text.visible = true
+	await get_tree().create_timer(2.0).timeout  # wait 2 seconds
+	text.visible = false

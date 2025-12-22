@@ -19,6 +19,7 @@ func _on_body_entered(body):
 				entered = true
 				show_splash()
 			body.global_position.x = 1600
+			body._show_three_items()
 		else:
 			body.global_position.x -= 30
 
