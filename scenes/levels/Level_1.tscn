@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cjqbga2khgpvs"]
+[gd_scene load_steps=19 format=4 uid="uid://cjqbga2khgpvs"]
 
 [ext_resource type="PackedScene" uid="uid://cj0qb6l1mhekv" path="res://scenes/items/oil.tscn" id="1_0h4qk"]
 [ext_resource type="PackedScene" uid="uid://c1uduxb1gbqfb" path="res://scenes/levels/intermission_splashes/level_2_splash.tscn" id="1_76qaf"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://b11ngmv6oyp2y" path="res://scenes/items/phone.tscn" id="3_2ocyu"]
 [ext_resource type="Texture2D" uid="uid://c60vj1yestgs6" path="res://assets/background/maze_tiles.png" id="3_pmbem"]
 [ext_resource type="Texture2D" uid="uid://dxqmc7p5cxn1t" path="res://assets/background/item_transitions.PNG" id="6_i8gtb"]
+[ext_resource type="Texture2D" uid="uid://dkerh3w24q5eb" path="res://assets/background/more_level_tiles.png" id="7_p0mcu"]
 [ext_resource type="Script" path="res://scripts/enter_level_2_from_1.gd" id="9_70f14"]
+[ext_resource type="Script" path="res://scripts/final_exit.gd" id="10_moc7i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s662r"]
 resource_name = "MazeTiles"
@@ -41,8 +43,20 @@ texture_region_size = Vector2i(40, 20)
 [sub_resource type="TileSet" id="TileSet_63li0"]
 sources/0 = SubResource("TileSetAtlasSource_v5q1g")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aquaj"]
+texture = ExtResource("7_p0mcu")
+separation = Vector2i(3, 1)
+texture_region_size = Vector2i(20, 20)
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ti17m"]
+sources/0 = SubResource("TileSetAtlasSource_aquaj")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2re86"]
 size = Vector2(73, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmcu4"]
+size = Vector2(30, 42)
 
 [node name="Level1" type="Node2D"]
 position = Vector2(153, 108)
@@ -81,6 +95,11 @@ scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAEAP7/AAAAAAEAAAA=")
 tile_set = SubResource("TileSet_63li0")
 
+[node name="LeaveTile" type="TileMapLayer" parent="TileMap"]
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAD5/wkAAAAAAAIAAAA=")
+tile_set = SubResource("TileSet_ti17m")
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
 
@@ -94,4 +113,12 @@ shape = SubResource("RectangleShape2D_2re86")
 [node name="Level2Splash" parent="Area2D" instance=ExtResource("1_76qaf")]
 visible = false
 
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("10_moc7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-143, 247)
+shape = SubResource("RectangleShape2D_mmcu4")
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
