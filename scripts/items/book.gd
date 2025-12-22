@@ -7,13 +7,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
 	pass
 
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):  # make sure the colliding body is the player
-		body.current_time = 105  # increase oil by 1/3
-	if body.current_time > body.max_time:
-		body.current_time = body.max_time
+		body.items += 1
 	queue_free()

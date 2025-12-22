@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://ermrypl24ne5"]
+[gd_scene load_steps=26 format=3 uid="uid://ermrypl24ne5"]
 
-[ext_resource type="Script" uid="uid://b74wji74tnphc" path="res://scripts/player.gd" id="1_yga4i"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_yga4i"]
 [ext_resource type="Texture2D" uid="uid://cffcwp2ycdlbp" path="res://assets/player_assets/LittleChanukahGuy.png" id="2_t23ks"]
 [ext_resource type="Texture2D" uid="uid://cuxj4yq4o16ir" path="res://assets/player_assets/light_circle.png" id="3_7303i"]
+[ext_resource type="FontFile" uid="uid://c1yjllkegadr7" path="res://assets/GrapeSoda.ttf" id="3_ylkwr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j27u7"]
 atlas = ExtResource("2_t23ks")
@@ -160,19 +161,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvtjk"]
-size = Vector2(18, 23)
+size = Vector2(34, 23)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1kvml"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kf6g1"]
 light_mode = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2kplb"]
-bg_color = Color(0.815686, 0.780392, 0.764706, 0.611765)
+bg_color = Color(0.649303, 0.718986, 0.777533, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bow7q"]
 bg_color = Color(0.651204, 0.602751, 0.387928, 1)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-scale = Vector2(2, 2)
+position = Vector2(104, 182)
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_yga4i")
 
 [node name="Walk Animations" type="AnimatedSprite2D" parent="."]
@@ -181,34 +183,69 @@ sprite_frames = SubResource("SpriteFrames_80tnd")
 animation = &"idle_down"
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(33, -18.5)
+position = Vector2(25, -18.5)
 shape = SubResource("RectangleShape2D_fvtjk")
 
-[node name="Oil" type="ProgressBar" parent="."]
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(100, -20)
+zoom = Vector2(2, 2)
+
+[node name="PlayerLight" type="PointLight2D" parent="."]
+position = Vector2(30.5, -25)
+scale = Vector2(0.660156, 0.585938)
+energy = 2.0
+texture = ExtResource("3_7303i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Oil" type="ProgressBar" parent="CanvasLayer"]
 light_mask = 0
+visibility_layer = 2
+z_index = 10
 z_as_relative = false
-material = SubResource("CanvasItemMaterial_1kvml")
-offset_left = 143.5
-offset_top = 32.0
-offset_right = 268.5
-offset_bottom = 42.0
+material = SubResource("CanvasItemMaterial_kf6g1")
+anchors_preset = -1
+anchor_left = 0.920594
+anchor_top = 0.096
+anchor_right = 0.967
+anchor_bottom = 0.919
+offset_left = 7.31195
+offset_top = 464.112
+offset_right = 423.792
+offset_bottom = 7.84296
+grow_horizontal = 2
+grow_vertical = 2
 rotation = 4.71239
 theme_override_styles/background = SubResource("StyleBoxFlat_2kplb")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bow7q")
 step = 1.0
 value = 50.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="Timer" parent="."]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(31.5, -29.5)
-zoom = Vector2(2, 2)
-
-[node name="PlayerLight" type="PointLight2D" parent="."]
-position = Vector2(32, -21.5)
-energy = 1.5
-blend_mode = 2
-texture = ExtResource("3_7303i")
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Oil"]
+show_behind_parent = true
+light_mask = 2
+visibility_layer = 2
+clip_contents = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0208124
+anchor_top = 0.625
+anchor_right = -0.0208124
+anchor_bottom = 0.625
+offset_left = -0.204034
+offset_top = -55.0
+offset_right = 99.6986
+offset_bottom = 29.0
+rotation = 1.5708
+theme_override_colors/default_color = Color(0.65098, 0.603922, 0.388235, 1)
+theme_override_fonts/normal_font = ExtResource("3_ylkwr")
+theme_override_font_sizes/normal_font_size = 75
+text = "Oil"
+autowrap_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://r0ctjoxg2oa4"]
+
+[ext_resource type="Texture2D" uid="uid://cvvdstjdx01vq" path="res://assets/background/mall_floor.png" id="1_spm5j"]
+
+[node name="Background" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
+texture_repeat = 2
+position = Vector2(511, 433)
+scale = Vector2(4, 4)
+texture = ExtResource("1_spm5j")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 256)

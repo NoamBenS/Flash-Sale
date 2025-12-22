@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=4 uid="uid://0kmlyg4dkjve"]
+
+[ext_resource type="PackedScene" uid="uid://cj0qb6l1mhekv" path="res://scenes/items/oil.tscn" id="1_fffyl"]
+[ext_resource type="PackedScene" uid="uid://cbmdargjvypv" path="res://scenes/items/cookie.tscn" id="2_e3j6w"]
+[ext_resource type="PackedScene" uid="uid://ermrypl24ne5" path="res://scenes/character/player.tscn" id="2_t2376"]
+[ext_resource type="PackedScene" uid="uid://cy5kw6dyln455" path="res://scenes/items/book.tscn" id="3_1pvj3"]
+[ext_resource type="PackedScene" uid="uid://ew6k3gqexey0" path="res://scenes/items/sweater.tscn" id="3_jwct8"]
+[ext_resource type="Texture2D" uid="uid://c60vj1yestgs6" path="res://assets/background/maze_tiles.png" id="3_kxxb4"]
+[ext_resource type="PackedScene" uid="uid://r0ctjoxg2oa4" path="res://scenes/background.tscn" id="4_ffrrv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8rtbg"]
+texture = ExtResource("3_kxxb4")
+separation = Vector2i(10, 10)
+texture_region_size = Vector2i(18, 18)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_i7f56"]
+physics_layer_0/collision_layer = 1
+sources/4 = SubResource("TileSetAtlasSource_8rtbg")
+
+[node name="Level2" type="Node2D"]
+
+[node name="Oil" parent="." instance=ExtResource("1_fffyl")]
+position = Vector2(419, 222)
+
+[node name="Oil2" parent="." instance=ExtResource("1_fffyl")]
+position = Vector2(780, -6)
+
+[node name="Cookie" parent="." instance=ExtResource("2_e3j6w")]
+position = Vector2(99, -32)
+
+[node name="Book" parent="." instance=ExtResource("3_1pvj3")]
+position = Vector2(795, 860)
+
+[node name="Sweater" parent="." instance=ExtResource("3_jwct8")]
+position = Vector2(-93, 809)
+scale = Vector2(1.5, 1.5)
+
+[node name="Player" parent="." instance=ExtResource("2_t2376")]
+position = Vector2(-80, 451)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_i7f56")
+format = 2
+
+[node name="Layer1" type="TileMapLayer" parent="TileMap"]
+z_index = -5
+use_parent_material = true
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAD9//7/BAAAAAAAAAD+//7/BAAAAAAAAAD///7/BAAAAAAAAAAAAP7/BAAAAAAAAAABAP7/BAAAAAAAAAACAP7/BAAAAAAAAAADAP7/BAAAAAAAAAAEAP7/BAAAAAAAAAAFAP7/BAAAAAAAAAAGAP7/BAAAAAAAAAAHAP7/BAAAAAAAAAAIAP7/BAAAAAAAAAD9/wgABAAAAAAAAAD9/wcABAAAAAAAAAD9/wQABAAAAAAAAAD9/wMABAAAAAAAAAD9/wIABAAAAAAAAAD9/wEABAAAAAAAAAD9////BAAAAAAAAAD9/wAABAAAAAAAAAD9/wkABAAAAAAAAAAJAP7/BAAAAAAAAAAKAP7/BAAAAAAAAAALAP7/BAAAAAAAAAAMAP7/BAAAAAAAAAANAP7/BAAAAAAAAAANAP//BAAAAAAAAAANAAAABAAAAAAAAAANAAEABAAAAAAAAAANAAMABAABAAAAAAANAAQABAABAAAAAAANAAYABAABAAAAAAANAAcABAABAAAAAAANAAgABAAAAAAAAAANAAkABAAAAAAAAAANAAoABAAAAAAAAAANAAsABAAAAAAAAAANAAwABAAAAAAAAAANAA0ABAAAAAAAAAANAA4ABAAAAAAAAAAMAA4ABAAAAAAAAAALAA4ABAAAAAAAAAAKAA4ABAAAAAAAAAAJAA4ABAAAAAAAAAAIAA4ABAAAAAAAAAAHAA4ABAAAAAAAAAAGAA4ABAAAAAAAAAAFAA4ABAAAAAAAAAAEAA4ABAAAAAAAAAADAA4ABAAAAAAAAAACAA4ABAAAAAAAAAABAA4ABAAAAAAAAAAAAA4ABAAAAAAAAAD//w4ABAAAAAAAAAD+/w4ABAAAAAAAAAD9/w4ABAAAAAAAAAD9/w0ABAAAAAAAAAD9/wwABAAAAAAAAAD9/wsABAAAAAAAAAD9/woABAAAAAAAAAADAA0ABAAAAAAAAAAHAA0ABAAAAAAAAAALAA0ABAAAAAAAAAALAAoABAAAAAAAAAAMAAoABAAAAAAAAAAMAAcABAABAAAAAAALAAcABAAAAAAAAAAKAAcABAAAAAAAAAAKAAgABAAAAAAAAAAMAAMABAABAAAAAAALAAMABAAAAAAAAAAKAAMABAAAAAAAAAAKAAIABAAAAAAAAAAKAAEABAAAAAAAAAALAAEABAAAAAAAAAAMAAEABAAAAAAAAAAJAAEABAAAAAAAAAAIAAEABAAAAAAAAAAIAAAABAAAAAAAAAAIAAIABAAAAAAAAAAHAAIABAAAAAAAAAAGAAIABAAAAAAAAAAFAAIABAAAAAAAAAAFAAMABAAAAAAAAAAFAAQABAAAAAAAAAAFAAUABAAAAAAAAAAHAAMABAAAAAAAAAAHAAQABAAAAAAAAAAHAAUABAAAAAAAAAAIAAUABAAAAAAAAAAIAAYABAAAAAAAAAAIAAcABAAAAAAAAAAIAAgABAAAAAAAAAAIAAkABAAAAAAAAAAIAAoABAAAAAAAAAAIAAsABAAAAAAAAAAJAAoABAAAAAAAAAAGAAsABAAAAAAAAAAGAAoABAAAAAAAAAAFAAoABAAAAAAAAAAEAAoABAAAAAAAAAADAAoABAAAAAAAAAADAAsABAAAAAAAAAD+/wcABAAAAAAAAAD//wcABAAAAAAAAAAAAAcABAAAAAAAAAABAAcABAAAAAAAAAABAAYABAAAAAAAAAABAAUABAAAAAAAAAABAAQABAAAAAAAAAABAAgABAAAAAAAAAACAAgABAAAAAAAAAADAAgABAAAAAAAAAAEAAgABAAAAAAAAAAFAAgABAAAAAAAAAAFAAcABAAAAAAAAAACAAMABAAAAAAAAAACAAIABAAAAAAAAAADAAIABAAAAAAAAAADAAMABAAAAAAAAAD//wgABAAAAAAAAAD//wkABAAAAAAAAAD//woABAAAAAAAAAD//wQABAAAAAAAAAD+/wIABAAAAAAAAAD//wAABAAAAAAAAAAAAAAABAAAAAAAAAABAAAABAAAAAAAAAACAAAABAAAAAAAAAACAP//BAAAAAAAAAAEAAAABAAAAAAAAAAEAP//BAAAAAAAAAAFAAAABAAAAAAAAAAGAAAABAAAAAAAAAAAAA0ABAAAAAAAAAAOAAYABAABAAAAAAAPAAYABAABAAAAAAAOAAQABAABAAAAAAAPAAQABAABAAAAAAD9/wUABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_i7f56")
+rendering_quadrant_size = 64
+collision_visibility_mode = 1
+
+[node name="Background" parent="." instance=ExtResource("4_ffrrv")]
+z_index = -10
+position = Vector2(-391, -117)
+scale = Vector2(2, 2)
