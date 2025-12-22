@@ -1,16 +1,14 @@
-[gd_scene load_steps=13 format=4 uid="uid://c7lwiogt5jecv"]
+[gd_scene load_steps=11 format=4 uid="uid://c7lwiogt5jecv"]
 
-[ext_resource type="PackedScene" uid="uid://ermrypl24ne5" path="res://scenes/character/player.tscn" id="1_m11yc"]
-[ext_resource type="PackedScene" uid="uid://cj0qb6l1mhekv" path="res://scenes/items/oil.tscn" id="1_qw5h6"]
-[ext_resource type="Texture2D" uid="uid://c60vj1yestgs6" path="res://assets/background/maze_tiles.png" id="2_caxot"]
-[ext_resource type="Texture2D" uid="uid://dxqmc7p5cxn1t" path="res://assets/background/item_transitions.PNG" id="2_cdgto"]
-[ext_resource type="PackedScene" uid="uid://cq2vakfg4oqo3" path="res://scenes/items/nail_polish.tscn" id="2_q8t62"]
-[ext_resource type="PackedScene" uid="uid://r0ctjoxg2oa4" path="res://scenes/background.tscn" id="3_rmldx"]
-[ext_resource type="PackedScene" uid="uid://c5rf8e1gpi8yl" path="res://scenes/items/dreidel.tscn" id="3_ylxgo"]
-[ext_resource type="Script" path="res://scripts/level_2_entry_from_3.gd" id="8_c3krm"]
+[ext_resource type="PackedScene" uid="uid://cj0qb6l1mhekv" path="res://scenes/items/oil.tscn" id="1_whqnr"]
+[ext_resource type="PackedScene" uid="uid://cq2vakfg4oqo3" path="res://scenes/items/nail_polish.tscn" id="2_g74t1"]
+[ext_resource type="PackedScene" uid="uid://c5rf8e1gpi8yl" path="res://scenes/items/dreidel.tscn" id="3_y3nco"]
+[ext_resource type="Texture2D" uid="uid://dxqmc7p5cxn1t" path="res://assets/background/item_transitions.PNG" id="4_x7vwk"]
+[ext_resource type="Texture2D" uid="uid://c60vj1yestgs6" path="res://assets/background/maze_tiles.png" id="5_udi6l"]
+[ext_resource type="Script" path="res://scripts/level_2_entry_from_3.gd" id="7_1qd51"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3oeoy"]
-texture = ExtResource("2_cdgto")
+texture = ExtResource("4_x7vwk")
 separation = Vector2i(0, 1)
 texture_region_size = Vector2i(40, 20)
 0:0/0 = 0
@@ -18,7 +16,7 @@ texture_region_size = Vector2i(40, 20)
 0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tflj"]
-texture = ExtResource("2_caxot")
+texture = ExtResource("5_udi6l")
 separation = Vector2i(10, 10)
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
@@ -40,22 +38,20 @@ size = Vector2(59, 30)
 
 [node name="Level_3" type="Node2D"]
 
-[node name="Oil3" parent="." instance=ExtResource("1_qw5h6")]
+[node name="Oil3" parent="." instance=ExtResource("1_whqnr")]
 position = Vector2(652, 734)
 
-[node name="Oil2" parent="." instance=ExtResource("1_qw5h6")]
+[node name="Oil2" parent="." instance=ExtResource("1_whqnr")]
 position = Vector2(1201, 96)
 
-[node name="Oil" parent="." instance=ExtResource("1_qw5h6")]
+[node name="Oil" parent="." instance=ExtResource("1_whqnr")]
 position = Vector2(1058, 862)
 
-[node name="NailPolish" parent="." instance=ExtResource("2_q8t62")]
+[node name="NailPolish" parent="." instance=ExtResource("2_g74t1")]
 position = Vector2(1299, 855)
 
-[node name="Dreidel" parent="." instance=ExtResource("3_ylxgo")]
+[node name="Dreidel" parent="." instance=ExtResource("3_y3nco")]
 position = Vector2(286, -351)
-
-[node name="Player" parent="." instance=ExtResource("1_m11yc")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
@@ -78,13 +74,8 @@ scale = Vector2(1.5, 1.5)
 tile_map_data = PackedByteArray("AAApAA4AAAAAAAEAAAABAAYAAAAAAAIAAAA=")
 tile_set = SubResource("TileSet_t5ote")
 
-[node name="Background" parent="." instance=ExtResource("3_rmldx")]
-z_index = -10
-position = Vector2(-353, -427)
-scale = Vector2(2, 2)
-
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("8_c3krm")
+script = ExtResource("7_1qd51")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(35.5, 156)

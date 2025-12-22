@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://wvh06ftiohj8"]
+
+[ext_resource type="PackedScene" uid="uid://r0ctjoxg2oa4" path="res://scenes/background.tscn" id="1_2ar3m"]
+[ext_resource type="PackedScene" uid="uid://cjqbga2khgpvs" path="res://scenes/levels/Level_1.tscn" id="1_7208t"]
+[ext_resource type="PackedScene" uid="uid://0kmlyg4dkjve" path="res://scenes/levels/Level_2.tscn" id="2_eefjk"]
+[ext_resource type="PackedScene" uid="uid://c7lwiogt5jecv" path="res://scenes/levels/Level_3.tscn" id="3_6mp5v"]
+[ext_resource type="PackedScene" uid="uid://ermrypl24ne5" path="res://scenes/character/player.tscn" id="4_qgw2d"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_2ar3m")]
+position = Vector2(2073, -185)
+
+[node name="Level1" parent="." instance=ExtResource("1_7208t")]
+position = Vector2(273, -139)
+
+[node name="Level2" parent="." instance=ExtResource("2_eefjk")]
+position = Vector2(1681, -248)
+
+[node name="Level_3" parent="." instance=ExtResource("3_6mp5v")]
+position = Vector2(3285, -64)
+
+[node name="Player" parent="." instance=ExtResource("4_qgw2d")]
+position = Vector2(218, 141)

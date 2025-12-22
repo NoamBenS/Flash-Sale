@@ -13,4 +13,7 @@ func _process(_delta):
 func _on_body_entered(body):
 	if (body.is_in_group("Player")):
 		if (body.items >= 6):
+			if (body.entered_level_3 == false):
+				body.entered_level_3 = true
+			body.global_position.x = 3400
 			get_tree().change_scene_to_file("res://scenes/level_3.tscn")

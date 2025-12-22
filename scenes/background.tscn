@@ -11,4 +11,4 @@ position = Vector2(511, 433)
 scale = Vector2(4, 4)
 texture = ExtResource("1_spm5j")
 region_enabled = true
-region_rect = Rect2(0, 0, 256, 256)
+region_rect = Rect2(0, 0, 1600, 512)
